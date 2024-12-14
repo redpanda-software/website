@@ -5,9 +5,14 @@
 
 ## Publishing Blog
 ```bash
+DOMAIN=https://xxxxxxx.fly.dev npm run build
+
 npm run build
 npm run preview
 
+fly scale count 2
+fly deploy
+fly scale count 1
 ```
 
 

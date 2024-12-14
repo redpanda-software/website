@@ -1,0 +1,18 @@
+{
+	log {
+		level INFO
+	}
+	auto_https off
+}
+
+:8080 {
+	root * /usr/share/caddy/redpanda
+	file_server
+
+	@healthReady {
+		path /health/ready
+	}
+	respond @healthReady 200 {
+		body "OK"
+	}
+}
